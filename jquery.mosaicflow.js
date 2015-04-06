@@ -105,6 +105,10 @@
 
 				// Remove excess columns
 				this.columns.filter(':hidden').remove();
+				
+				// update columns after removing excess
+				this.columns = this.container.find('.' + this.options.columnClass);
+				this.columns.css('width', (100 / this.numberOfColumns) + '%');
 			}
 			this.container.css('visibility', 'visible');
 			this.container.trigger('filled');
